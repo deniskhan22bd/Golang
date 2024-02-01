@@ -13,6 +13,7 @@ func main(){
 	r.HandleFunc("/books", handlers.GetBooks).Methods("GET")
 	r.HandleFunc("/books/id/{id}", handlers.GetBookById).Methods("GET")
 	r.HandleFunc("/books/title/{title}", handlers.GetBookByTitle).Methods("GET")
+	r.HandleFunc("/books/year/{year}", handlers.GetBookByPublishedYear).Methods("GET")
 	http.Handle("/", r)
 
 	log.Print("starting server on :8080")

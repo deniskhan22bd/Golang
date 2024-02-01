@@ -28,4 +28,15 @@ var Books = []Book{
 	{Id: 18, Title: "A Tale of Two Cities", Author: "Charles Dickens", PublishedYear: 1859},
 	{Id: 19, Title: "The Road", Author: "Cormac McCarthy", PublishedYear: 2006},
 	{Id: 20, Title: "The Girl with the Dragon Tattoo", Author: "Stieg Larsson", PublishedYear: 2005},
+	{Id: 21, Title: "The Fellowship of the Ring", Author: "J.R.R. Tolkien", PublishedYear: 1954},
+	{Id: 22, Title: "The Two Towers", Author: "J.R.R. Tolkien", PublishedYear: 1954},
+	{Id: 23, Title: "The Return of the King", Author: "J.R.R. Tolkien", PublishedYear: 1955},
+	{Id: 24, Title: "The Grapes of Wrath", Author: "John Steinbeck", PublishedYear: 1939},
+	{Id: 25, Title: "The Road Not Taken", Author: "Robert Frost", PublishedYear: 1916},
+	{Id: 26, Title: "Dune", Author: "Frank Herbert", PublishedYear: 1965},
+	{Id: 27, Title: "The OutsIders", Author: "S.E. Hinton", PublishedYear: 1967},
+	{Id: 28, Title: "The Color Purple", Author: "Alice Walker", PublishedYear: 1982},
+	{Id: 29, Title: "The War of the Worlds", Author: "H.G. Wells", PublishedYear: 1898},
+	{Id: 30, Title: "The Time Machine", Author: "H.G. Wells", PublishedYear: 1895},
+	
 }

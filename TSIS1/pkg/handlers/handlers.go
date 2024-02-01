@@ -7,13 +7,12 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-
 	"github.com/gorilla/mux"
 )
 
 func HealthCheck(w http.ResponseWriter, r* http.Request){
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "App about ... by Khan Denis")
+	fmt.Fprintf(w, "App is running! \nWeb app about books by Khan Denis")
 }
 
 func GetBooks(w http.ResponseWriter, r* http.Request){
@@ -70,4 +69,30 @@ func GetBookByTitle(w http.ResponseWriter, r* http.Request){
 	}
 	
 	http.Error(w, "Book not found", http.StatusNotFound)
+}
+
+func GetBookByPublishedYear(w http.ResponseWriter, r* http.Request){
+	w.Header().Set("Content-Type", "application/json")
+	vars := mux.Vars(r)
+	vars_year := vars["year"]
+
+	var books []testdata.Book
+
+	for _, book := range testdata.Books{
+		if strconv.Itoa(book.PublishedYear) == vars_year{
+			books = append(books, book)
+		}
+	}
+	
+	if len(books) == 0{
+		http.Error(w, "Book not found", http.StatusNotFound)
+	} else{
+		jsonResponse, err := json.Marshal(books)
+
+		if err != nil{
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+		w.Write(jsonResponse)
+	}
 }
