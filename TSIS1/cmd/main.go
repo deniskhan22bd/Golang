@@ -17,6 +17,5 @@ func main(){
 	http.Handle("/", r)
 
 	log.Print("starting server on :8080")
-	err := http.ListenAndServe(":8080", r)
-	log.Fatal(err)
+	http.ListenAndServe(":8080", r)
 }
